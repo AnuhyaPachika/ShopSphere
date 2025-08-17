@@ -43,30 +43,31 @@ The platform delivers a complete e-commerce experience with **Spring Boot 3**, *
 
 ---
 
-## 🏗️ System Architecture
 
+## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
-  U[User Browser\nAngular SPA] <--> API[Spring Boot 3\nREST API]
-  API <--> DB[(PostgreSQL)]
+    U[User Browser<br/>Angular SPA] <--> API[Spring Boot 3<br/>REST API]
+    API <--> DB[(PostgreSQL)]
 
-  %% Qualities / cross-cuts
-  U -->|JWT tokens| AUTH[JWT Auth + Guards]
-  API --> DOCS[Swagger / Validation]
-  DB --> TEST[Testcontainers (Integration Tests)]
+    %% Qualities / cross-cuts
+    U -->|JWT tokens| AUTH[JWT Auth + Guards]
+    API --> DOCS[Swagger / Validation]
+    DB --> TEST[Testcontainers Integration Tests]
 
-  %% DevOps
-  subgraph DEVOPS[CI/CD & Orchestration]
-    GH[GitHub Actions]
-    DC[Docker Compose]
-  end
+    %% DevOps
+    subgraph DEVOPS[CI/CD & Orchestration]
+        GH[GitHub Actions]
+        DC[Docker Compose]
+    end
 
-  GH --> API
-  GH --> U
-  DC --> U
-  DC --> API
-  DC --> DB
+    GH --> API
+    GH --> U
+    DC --> U
+    DC --> API
+    DC --> DB
+
 
 ```
 
