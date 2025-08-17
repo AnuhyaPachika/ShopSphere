@@ -165,8 +165,4 @@ Input validation & exception handling
 MIT License — free to use, modify, and distribute.
 
 
-Edit
 
-🔥 This is **copy-paste ready** for your `README.md`.  
-
-Do you want me to also generate an **architecture diagram image (PNG)** so recruiters see visuals, not 
