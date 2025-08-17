@@ -46,12 +46,30 @@ The platform delivers a complete e-commerce experience with **Spring Boot 3**, *
 ## 🏗️ System Architecture
 
 ```text
-[ Angular SPA ]  <---->  [ Spring Boot REST API ]  <---->  [ PostgreSQL DB ]
-      |                          |                            |
-   (UI/UX)                (Business Logic)             (Persistent Store)
-      |                          |                            |
- [ JWT Auth ]       [ Swagger + Validation ]        [ Testcontainers ]
-                      [ CI/CD with GitHub Actions + Docker Compose ]
+🏗️ System Architecture
+
+```mermaid
+flowchart TD
+  U[User Browser\nAngular SPA] <--> API[Spring Boot 3\nREST API]
+  API <--> DB[(PostgreSQL)]
+
+  %% Qualities / cross-cuts
+  U -->|JWT tokens| AUTH[JWT Auth + Guards]
+  API --> DOCS[Swagger / Validation]
+  DB --> TEST[Testcontainers (Integration Tests)]
+
+  %% DevOps
+  subgraph DEVOPS[CI/CD & Orchestration]
+    GH[GitHub Actions]
+    DC[Docker Compose]
+  end
+
+  GH --> API
+  GH --> U
+  DC --> U
+  DC --> API
+  DC --> DB
+
 ```
 
 ---
