@@ -45,8 +45,6 @@ The platform delivers a complete e-commerce experience with **Spring Boot 3**, *
 
 ## 🏗️ System Architecture
 
-```text
-🏗️ System Architecture
 
 ```mermaid
 flowchart TD
