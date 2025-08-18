@@ -1,0 +1,12 @@
+<h1>{{ title }}</h1>
+<div *ngIf="loading">Loading…</div>
+<div *ngIf="!loading && error" style="color:red">{{ error }}</div>
+<table *ngIf="!loading && !error" border="1" cellpadding="8">
+  <thead><tr><th>ID</th><th>Name</th><th>Description</th><th>Price</th><th>Stock</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p.id}}</td><td>{{p.name}}</td><td>{{p.description}}</td>
+      <td>{{p.price | currency}}</td><td>{{p.stock}}</td>
+    </tr>
+  </tbody>
+</table>

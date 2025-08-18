@@ -1,9 +1,19 @@
-backend/target/
-*.log
-frontend/node_modules/
-frontend/dist/
-.idea/
-.vscode/
+# Node / Angular
+node_modules/
+dist/
+.angular/
+.env
+.env.*.local
+
+# Java / Spring Boot
+target/
 *.iml
+.idea/
+.gradle/
+build/
+
+# OS / editors
 .DS_Store
-**/.env
+Thumbs.db
+.vscode/
+*.log
